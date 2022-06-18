@@ -1,0 +1,32 @@
+FROM alpine:latest
+
+## TODO : <https://wiki.alpinelinux.org/wiki/Configure_OpenLDAP>
+
+LABEL Maintainer="PapierPain <papierpain4287@outlook.fr>"
+LABEL Description="LDAP container for development environment"
+
+EXPOSE 389
+
+# Install packages
+RUN apk update && apk upgrade \
+    && apk add bash nmap nano  \
+    && apk add openrc --no-cache \
+    && rm -rf /var/cache/apk/*
+
+# RUN install -m 755 -o ldap -g ldap -d /etc/openldap/slapd.d
+
+# Trucs à faire pour l'installation
+
+# RUN rm /etc/openldap/slapd.conf
+
+COPY configure-ldap.sh /configure-ldap.sh
+RUN chmod +x /configure-ldap.sh
+RUN /configure-ldap.sh
+
+
+
+# Copy configuration files
+# COPY conf/ldap.conf /etc/ldap/ldap.conf
+
+# Reconfigure slapd
+# RUN dpkg-reconfigure slapd

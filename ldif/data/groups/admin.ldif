@@ -1,0 +1,5 @@
+dn: cn=admin,ou=groups,dc=papierpain,dc=fr
+objectclass: top
+objectclass: groupofnames
+member: uid=boss,ou=users,dc=papierpain,dc=fr
+cn: admin

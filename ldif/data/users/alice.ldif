@@ -1,0 +1,8 @@
+dn: uid=alice,ou=users,dc=papierpain,dc=fr
+objectClass: top
+objectClass: person
+objectClass: inetOrgPerson
+cn: Cheshire
+sn: Alice
+mail: eponge.alice@example.fr
+uid: alice
