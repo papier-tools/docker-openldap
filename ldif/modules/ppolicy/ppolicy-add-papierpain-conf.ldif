@@ -1,6 +1,0 @@
-dn: olcOverlay=ppolicy,olcDatabase={1}mdb,cn=config
-objectClass: olcPpolicyConfig
-olcOverlay: ppolicy
-olcPPolicyDefault: cn=ppolicy,dc=papierpain,dc=fr
-olcPPolicyUseLockout: FALSE
-olcPPolicyHashCleartext: TRUE

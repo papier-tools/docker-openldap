@@ -1,4 +1,0 @@
-dn: cn=ppolicy,dc=papierpain,dc=fr
-changeType: modify
-add: pwdCheckModule
-pwdCheckModule: pqchecker.so

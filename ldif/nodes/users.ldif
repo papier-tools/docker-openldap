@@ -1,5 +1,0 @@
-# Content of the users file
-
-dn: ou=users,dc=papierpain,dc=fr
-objectClass: organizationalUnit
-ou: users

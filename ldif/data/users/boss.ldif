@@ -1,8 +1,0 @@
-dn: uid=boss,ou=users,dc=papierpain,dc=fr
-objectClass: top
-objectClass: person
-objectClass: inetOrgPerson
-cn: Boss
-sn: Baby
-mail: baby.boss@example.fr
-uid: boss
