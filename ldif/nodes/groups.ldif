@@ -1,6 +1,0 @@
-# Content of the groups file
-
-dn: ou=groups,dc=papierpain,dc=fr
-objectClass: organizationalunit
-objectClass: top
-ou: groups
