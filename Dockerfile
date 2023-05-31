@@ -1,13 +1,13 @@
-FROM bitnami/minideb:bullseye
+FROM debian:bullseye-slim
 
 LABEL Maintainer="PapierPain <papierpain4287@outlook.fr>"
-LABEL Description="OpenLDAPain container based on Debian Linux (minideb from Bitnami)"
+LABEL Description="OpenLDAPain container based on Debian Linux"
 
 WORKDIR /openldap
 
-###########################################################
+####################
 # INSTALLATION
-###########################################################
+####################
 #
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -15,9 +15,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y ldap-utils slapd && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-###########################################################
+####################
 # CONFIGURATION
-###########################################################
+####################
 #
 
 COPY *.sh /openldap/

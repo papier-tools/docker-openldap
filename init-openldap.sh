@@ -12,7 +12,7 @@ LDAP_ADMIN_DN="cn=${LDAP_ADMIN_USERNAME},${LDAP_ROOT}"
 
 # If the database already exists, do nothing
 if [ -d "$LDAP_CUSTOM_DB_DIR" ]; then
-    echo "Database already exists, skipping initialization"
+    echo "Database already exists, skipping default initialization."
     exit 0
 fi
 
@@ -54,7 +54,7 @@ objectClass: olcDatabaseConfig
 objectClass: olcFrontendConfig
 olcDatabase: {-1}frontend
 olcAccess: {0}to * by dn.exact=gidNumber=0+uidNumber=0,cn=peercred,cn=extern
- al,cn=auth manage by * break
+al,cn=auth manage by * break
 olcAccess: {1}to dn.exact="" by * read
 olcAccess: {2}to dn.base="cn=Subschema" by * read
 olcSizeLimit: 500
@@ -63,7 +63,7 @@ dn: olcDatabase={0}config,cn=config
 objectClass: olcDatabaseConfig
 olcDatabase: {0}config
 olcAccess: {0}to * by dn.exact=gidNumber=0+uidNumber=0,cn=peercred,cn=extern
- al,cn=auth manage by * break
+al,cn=auth manage by * break
 olcRootDN: cn=admin,cn=config
 
 dn: olcDatabase={1}mdb,cn=config
@@ -73,7 +73,7 @@ olcDatabase: {1}mdb
 olcDbDirectory: $LDAP_CUSTOM_DB_DIR
 olcSuffix: $LDAP_ROOT
 olcAccess: {0}to attrs=userPassword by self write by anonymous auth by * non
- e
+e
 olcAccess: {1}to attrs=shadowLastChange by self write by * read
 olcAccess: {2}to * by * read
 olcLastMod: TRUE

@@ -1,10 +1,22 @@
+variables:
+  VERSION:
+    value: $CI_COMMIT_REF_SLUG
+    description: Nom de la version
+
 include:
-  - project: 'docker/ci-template'
+  - project: 'labo/cicd-templates'
     ref: master
-    file: 'deploy-docker.gitlab-ci.yml'
+    file:
+      - '/templates/build-docker.gitlab-ci.yml'
+
+build-docker:
+  extends: .template-build-docker
+  variables:
+    DOCKERFILE: Dockerfile
 
 workflow:
+  name: 💥 $VERSION - (╯°□°)╯︵ ┻━┻ 💥
   rules:
-    - if: $CI_PIPELINE_SOURCE == "web" || $CI_COMMIT_BRANCH == "master"
+    - if: $CI_PIPELINE_SOURCE == "web"
       when: always
     - when: never
